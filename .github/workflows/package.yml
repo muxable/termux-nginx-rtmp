@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target_arch: [aarch64, arm, i686, x86_64]
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
@@ -28,7 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: debs-${{ matrix.arch }}
+          name: debs-${{ matrix.target_arch }}
           path: debs
 
   deploy:
