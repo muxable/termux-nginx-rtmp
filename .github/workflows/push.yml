@@ -26,4 +26,6 @@ jobs:
           path: packages/nginx-rtmp
       - name: Build
         run: |
-          ls packages
+          ./scripts/setup-ubuntu.sh
+          ./scripts/setup-android-ndk.sh
+          ./build-package.sh -I nginx-rtmp
