@@ -24,8 +24,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: packages/nginx-rtmp
-      - name: Sanity check
-        run: ls packages/nginx-rtmp
       - name: Configure environment
         run: |
           ./scripts/setup-ubuntu.sh
