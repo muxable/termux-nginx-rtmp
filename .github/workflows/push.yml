@@ -26,4 +26,4 @@ jobs:
           path: packages/nginx-rtmp
       - name: Build
         run: |
-          echo "ok"
+          ls packages
