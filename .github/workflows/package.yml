@@ -1,0 +1,53 @@
+name: Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+        with:
+          repository: termux/termux-packages
+          fetch-depth: 1000
+      - name: Clone nginx-rtmp
+        uses: actions/checkout@v2
+        with:
+          path: packages/nginx-rtmp
+      - name: Configure environment
+        run: |
+          ./scripts/setup-ubuntu.sh
+          ./scripts/setup-android-sdk.sh
+      - name: Build
+        run: |
+          ./build-package.sh -I nginx-rtmp
+      - name: Upload artifact
+      - uses: actions/upload-artifact@v2
+        with:
+          name: debs-${{ matrix.arch }}
+          path: debs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+      - uses: actions/download-artifact@v2
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      # - name: Install termux-apt-repo
+      #   run: python3 -m pip install termux-apt-repo
+      # - name: Package
+      #   run: |
+      #     termux-apt-repo ./debs ./public
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public

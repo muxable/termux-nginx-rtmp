@@ -87,18 +87,8 @@ termux_step_post_make_install() {
 	# many parts are taken directly from Arch PKGBUILD
 	# https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/nginx
 
-	# set default port to 8080
-	sed -i "s| 80;| 8080;|" "$TERMUX_PREFIX/etc/nginx/nginx.conf"
-	cp conf/mime.types "$TERMUX_PREFIX/etc/nginx/"
-	rm "$TERMUX_PREFIX"/etc/nginx/*.default
-
-	# move default html dir
-	sed -e "44s|html|$TERMUX_PREFIX/share/nginx/html|" \
-		-e "54s|html|$TERMUX_PREFIX/share/nginx/html|" \
-		-i "$TERMUX_PREFIX/etc/nginx/nginx.conf"
-	rm -rf "$TERMUX_PREFIX/share/nginx"
-	mkdir -p "$TERMUX_PREFIX/share/nginx"
-	mv "$TERMUX_PREFIX/html/" "$TERMUX_PREFIX/share/nginx"
+	# overwrite nginx.conf
+	cp "$TERMUX_PKG_BUILDER_DIR/nginx.conf" "$TERMUX_PREFIX/etc/nginx/nginx.conf"
 
 	# install vim contrib
 	for i in ftdetect indent syntax; do
