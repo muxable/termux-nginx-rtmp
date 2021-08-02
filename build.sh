@@ -16,6 +16,24 @@ etc/nginx/scgi_params
 etc/nginx/uwsgi_params
 etc/nginx/win-utf"
 
+termux_step_get_source() {
+        termux_download "https://nginx.org/download/nginx-1.21.1.tar.gz" \
+                $TERMUX_PKG_CACHEDIR/nginx-1.21.1.tar.gz \
+                68ba0311342115163a0354cad34f90c05a7e8bf689dc498abf07899eda155560
+        termux_download "https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v1.2.2.tar.gz" \
+                $TERMUX_PKG_CACHEDIR/nginx-rtmp-module-1.2.2.tar.gz \
+                07f19b7bffec5e357bb8820c63e5281debd45f5a2e6d46b1636d9202c3e09d78
+        mkdir -p $TERMUX_PKG_SRCDIR
+}
+
+termux_step_post_get_source() {
+        cd $TERMUX_PKG_SRCDIR
+
+        mkdir $TERMUX_PKG_SRCDIR/nginx-rtmp-module
+        tar xvfz $TERMUX_PKG_CACHEDIR/nginx-1.21.1.tar.gz --strip-components=1 -C $TERMUX_PKG_SRCDIR
+        tar xvfz $TERMUX_PKG_CACHEDIR/nginx-rtmp-module-1.2.2.tar.gz --strip-components=1 -C $TERMUX_PKG_SRCDIR/nginx-rtmp-module
+}
+
 termux_step_pre_configure() {
 	# Certain packages are not safe to build on device because their
 	# build.sh script deletes specific files in $TERMUX_PREFIX.
