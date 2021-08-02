@@ -24,8 +24,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: packages/nginx-rtmp
+      - name: Configure environment
+        run: |
+          ls packages/nginx-rtmp
+          ./scripts/setup-ubuntu.sh
+          ./scripts/setup-android-sdk.sh
       - name: Build
         run: |
-          ./scripts/setup-ubuntu.sh
-          ./scripts/setup-android-ndk.sh
           ./build-package.sh -I nginx-rtmp
+          ls debs
