@@ -26,7 +26,7 @@ jobs:
         run: |
           ./build-package.sh -I nginx-rtmp
       - name: Upload artifact
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: debs-${{ matrix.arch }}
           path: debs
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
-      - uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v2
 
       - name: Display structure of downloaded files
         run: ls -R
