@@ -27,7 +27,7 @@ jobs:
           ./scripts/setup-android-sdk.sh
       - name: Build
         run: |
-          ./build-package.sh -I nginx-rtmp
+          ./build-package.sh -I nginx-rtmp -a ${{ matrix.target_arch }}
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
