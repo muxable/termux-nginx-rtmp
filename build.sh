@@ -76,6 +76,7 @@ termux_step_configure() {
 		--http-fastcgi-temp-path="$TERMUX_PREFIX/var/lib/nginx/fastcgi" \
 		--http-scgi-temp-path="$TERMUX_PREFIX/var/lib/nginx/scgi" \
 		--http-uwsgi-temp-path="$TERMUX_PREFIX/var/lib/nginx/uwsgi" \
+		--add-module="$TERMUX_PKG_SRCDIR/nginx-rtmp-module" \
 		--with-http_auth_request_module \
 		--with-http_ssl_module \
 		--with-http_v2_module \
