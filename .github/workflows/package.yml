@@ -40,17 +40,18 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v2
-
-      - name: Display structure of downloaded files
-        run: ls -R
-
-      # - name: Install termux-apt-repo
-      #   run: python3 -m pip install termux-apt-repo
-      # - name: Package
-      #   run: |
-      #     termux-apt-repo ./debs ./public
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./public
+      - name: Merge artifacts
+        run: |
+          mkdir debs
+          find . -iname '*.deb' -exec cp \{\} /debs/ \;
+          ls -R
+      - name: Install termux-apt-repo
+        run: python3 -m pip install termux-apt-repo
+      - name: Package
+        run: |
+          termux-apt-repo ./debs ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
