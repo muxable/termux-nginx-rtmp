@@ -43,7 +43,7 @@ jobs:
       - name: Merge artifacts
         run: |
           mkdir debs
-          find . -iname '*.deb' -exec cp \{\} /debs/ \;
+          find . -name '*.deb' | xargs -i cp {} ./debs
           ls -R
       - name: Install termux-apt-repo
         run: python3 -m pip install termux-apt-repo
