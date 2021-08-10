@@ -1,5 +1,7 @@
 # termux-nginx-rtmp
 
+This is an `nginx` build for Termux that includes `nginx-rtmp-module`.
+
 ## Installation
 
 ```sh
