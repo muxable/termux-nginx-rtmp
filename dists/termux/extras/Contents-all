@@ -1,0 +1,3 @@
+data/data/com.termux/files/usr/lib/jvm/openjdk-9/lib/security/jssecacerts        ca-certificates-java
+data/data/com.termux/files/usr/share/doc/ca-certificates/LICENSE                 ca-certificates
+data/data/com.termux/files/usr/etc/tls/cert.pem                                  ca-certificates
