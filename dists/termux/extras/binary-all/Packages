@@ -7,11 +7,11 @@ Homepage: https://curl.se/docs/caextract.html
 Depends: ca-certificates (= 20210603)
 Description: Common CA certificates (java keystore format)
 Filename: dists/termux/extras/binary-all/ca-certificates-java_20210603_all.deb
-Size: 102336
-MD5Sum: ac608637b3a5947d80fe034cb8fde077
-SHA1: 6167e906814fdc31159fdb4b48677e8685883b75
-SHA256: a55f33d33862e016e31bca476ef384a11bb1c3f70084e322deefb1d998a52cc0
-SHA512: 5b977a5ba9646e0a4e78eaee6d5176848b2aa85a9a959313e00acb087b8ff96c83d279415376eb8b88efe2da0e4266b1fb12a60724c7193c6af12ef1a4e4c86c
+Size: 102356
+MD5Sum: 9f4e454d5f3c6d90713bad54441544b4
+SHA1: bbb6663b1e3e43f07cf143f110a6acfc2f7bd6e1
+SHA256: 2d777545e8a3b79ef4c4a1a095063b9ecad071431238a717fc7f2976b5a70bed
+SHA512: 87bd0598996c5d0368ead0b16793e53167caea47a5c278cc0564e91595274540b56ad81d58f12354ccfc761ce4b149ab85c3189cf9d2684d5931c56abf4da25c
 
 Package: ca-certificates
 Architecture: all
@@ -21,9 +21,9 @@ Version: 20210603
 Homepage: https://curl.se/docs/caextract.html
 Description: Common CA certificates
 Filename: dists/termux/extras/binary-all/ca-certificates_20210603_all.deb
-Size: 112288
-MD5Sum: 8f607f5a317c0bf4ac845ec22a770638
-SHA1: 428ef9b4d047f1467d9390b90cde515a9ce369dc
-SHA256: c4fb42a1dc0f44adf545fdddd081b8cafc0afaa9fec396b3a31eee4574551d12
-SHA512: f764a5b509083c8343d97e905f8c1ecab19857b8fa846cf74194f02c8a24a0f18f2d1384bdef512613eb7b0916669edbb4bc3e374e06b98f7fba4f888c31697b
+Size: 112272
+MD5Sum: f7c6e4a1dade48af4c09e0f63cf0609a
+SHA1: 224a28fc4b2389d265c19f2825631ea320b30c44
+SHA256: be561b88ddcb432dcb3446b0941f861c92753c792abbf3d577a42b2135882517
+SHA512: 4f18cca897e1eb5ad8d3153ae4b1300f142777bbb38eb51862cf7ab94d4b37e47a93b342b5a4a97b67f515abaae1db92e0d23f9cef4a04e0b00c38e8550dc224
 

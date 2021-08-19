@@ -7,9 +7,9 @@ Homepage: https://www.nginx.org
 Depends: libandroid-glob, libcrypt, pcre, openssl, zlib
 Description: Lightweight HTTP server
 Filename: dists/termux/extras/binary-arm/nginx-rtmp_1.21.1_arm.deb
-Size: 376822
-MD5Sum: c971778e32b00d967c20de36d6c47585
-SHA1: 293866f2fd059cf2115bb74dfda5b70167bd19a4
-SHA256: 5a48b7c8fc9a08f6bb4ee9123c00769103038ff76a6349cf48ad9ceb6463448a
-SHA512: a97c6041c3c28e6a01669db2c14126dd2e7ca1a4a14d90a26ce275c756eb47088b20574d2946d9919e805bb6a767f6de1719b6ecc83efd069d8d606e4840eba6
+Size: 376728
+MD5Sum: 5b25b4eb33a35ae49b659395943d53ba
+SHA1: fe7f3d2c02594cdb1d910ceb6ed7eccbb6fdd47b
+SHA256: 1eeeaf6910eab2b23395dcd30407a0eadfbb549911f89d9613b9241f141ea560
+SHA512: aac1ba6d19da473589cac07eb585dceb70b5516757d167703223dd1b0d72c887d107fe7ead948c1021a4e6d10e51cbc2d6058838a0b7502a272e115a5d2d448c
 
